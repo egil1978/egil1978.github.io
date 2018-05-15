@@ -130,7 +130,9 @@ section:last-child {
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGF0YXZpeiIsImEiOiJjamgyM2kycXkwOTYwMnptanJueDhlMTdwIn0.cf14J_rCTb_DuqYarLXtlA';
-var map = new mapboxgl.Map({
+var map = new mapboxgl.Map({;
+    var credits = L.control.attribution().addTo(map);
+credits.addAttribution('Credits: Penny Dog Mapping Co.');
     container: 'map',
     style: 'mapbox://styles/geodataviz/cjh1w236f0tj22sl87sm547vt',
         bearing: 0,
