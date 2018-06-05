@@ -1,1 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:75%;
+}
+#features {
+    width: 25%;
+    margin-left: 75%;
+    font-family: Arial;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 20px;
+}
+section.active {
+    opacity: 0.75;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 1000px;
+}
+</style>
+
+<div id='map'></div>
+<div id='features'>
+    <section id='start' class='active'>
+        <h3>World Cup 1966</h3>
+        <h4>The Route to the Final</h4><br><font size="1">Contains OS data © Crown copyright and database rights 2018</font>
+    </section>
+    <section id='section1' class='active'>
+        <h4>The Team</h4>
+        <font size="1">In July 1966 the eighth staging of the FIFA World Cup was held in England.
+         Sir Alf Ramsey was manager and the Beatles were at number one with Paperback Writer. Sir Alf took a team of 22 players to the finals and this is their journey.</font>
+    </section>
+    <section id='section2'>
+        <h3>Manager</h3>
+        <h4>Sir Alf Ramsey</h4>
+      <font size="1">Born: Dagenham, Essex<br>Age: 46</font>
+    </section>
+    <section id='section3'>
+        <h3>No.1 Goal Keeper</h3>
+        <h4>Gordon Banks</h4>
+      <font size="1">Born: Sheffield, West Riding<br>Age: 28<br>Caps: 27</font>
+    </section>
+    <section id='section4'>
+        <h3>No.2 Defender</h3>
+        <h4>George Cohen</h4>
+      <font size="1">Born: Kensington, Greater London<br>Age: 26<br>Caps: 24</font>
+    </section>
+    <section id='section5'>
+       <h3>No.3 Defender</h3>
+        <h4>Ray Wilson</h4>
+      <font size="1">Born: Shirebrook, Derbyshire<br>Age: 31<br>Caps: 45</font>
+    </section>
+    <section id='section6'>
+        <h3>No.4 Midfielder</h3>
+        <h4>Nobby Stiles</h4>
+      <font size="1">Born: Collyhurst, Manchester<br>Age: 24<br>Caps: 14</font>
+    </section>
+    <section id='section7'>
+        <h3>No.5 Defender</h3>
+        <h4>Jack Charlton</h4>
+      <font size="1">Born: Ashington, Northumberland<br>Age: 31<br>Caps: 16</font>
+    </section>
+    <section id='section8'>
+       <h3>No.6 Defender (Captain)</h3>
+        <h4>Bobby Moore</h4>
+      <font size="1">Born: Barking, Essex<br>Age: 25<br>Caps: 41</font>
+    </section>
+    <section id='section9'>
+        <h3>No.7 Midfielder</h3>
+        <h4>Alan Ball</h4>
+      <font size="1">Born: Farnworth, Lancashire<br>Age: 21<br>Caps: 10</font>
+    </section>
+    <section id='section10'>
+       <h3>No.8 Forward</h3>
+        <h4>Jimmy Greaves</h4>
+      <font size="1">Born: Manor Park, Essex<br>Age: 26<br>Caps: 51</font>
+    </section>
+    <section id='section11'>
+        <h3>No.9 Midfielder</h3>
+        <h4>Bobby Charlton</h4>
+      <font size="1">Born: Ashington, Northumberland<br>Age: 28<br>Caps: 68</font>
+    </section>
+    <section id='section12'>
+        <h3>No.10 Forward</h3>
+        <h4>Geoff Hurst</h4>
+      <font size="1">Born: Ashton-under-Lyne<br>Age: 24<br>Caps: 4</font>
+    </section>
+    <section id='section13'>
+        <h3>No.11 Forward</h3>
+        <h4>John Connelly</h4>
+      <font size="1">Born: St Helens, Lancashire<br>Age: 27<br>Caps: 19</font>
+    </section>
+    <section id='section14'>
+        <h3>No.12 Goal Keeper</h3>
+        <h4>Ron Springett</h4>
+      <font size="1">Born: Kingston upon Thames<br>Age: 30<br>Caps: 33</font>
+    </section>
+    <section id='section15'>
+        <h3>No.13 Goal Keeper</h3>
+        <h4>Peter Bonetti</h4>
+      <font size="1">Born: Putney, London<br>Age: 24<br>Caps: 1</font>
+    </section>
+    <section id='section16'>
+        <h3>No.14 Defender</h3>
+        <h4>Jimmy Armfield</h4>
+      <font size="1">Born: Denton, Lancashire<br>Age: 30<br>Caps: 43</font>
+    </section>
+    <section id='section17'>
+        <h3>No.15 Defender</h3>
+        <h4>Gerry Byrne</h4>
+      <font size="1">Born: Liverpool, Lancashire<br>Age: 27<br>Caps: 2</font>
+    </section>
+    <section id='section18'>
+        <h3>No.16 Midfielder</h3>
+        <h4>Martin Peters</h4>
+      <font size="1">Born: Plaistow, Essex<br>Age: 22<br>Caps: 3</font>
+    </section>
+    <section id='section19'>
+        <h3>No.17 Midfielder</h3>
+        <h4>Ron Flowers</h4>
+      <font size="1">Born: Edlington, Doncaster<br>Age: 31<br>Caps: 49</font>
+    </section>
+    <section id='section20'>
+        <h3>No.18 Defender</h3>
+        <h4>Norman Hunter</h4>
+      <font size="1">Born: Gateshead, County Durham<br>Age: 22<br>Caps: 4</font>
+    </section>
+  <section id='section21'>
+        <h3>No.19 Forward</h3>
+        <h4>Terry Paine</h4>
+      <font size="1">Born: Winchester, Hampshire<br>Age: 27<br>Caps: 18</font>
+    </section>
+  <section id='section22'>
+        <h3>No.20 Midfielder</h3>
+        <h4>Ian Callaghan</h4>
+      <font size="1">Born: Toxteth, Liverpool<br>Age: 24<br>Caps: 1</font>
+    </section>
+  <section id='section23'>
+        <h3>No.21 Forward</h3>
+        <h4>Roger Hunt</h4>
+      <font size="1">Born: Glazebury, Lancashire<br>Age: 27<br>Caps: 13</font>
+    </section>
+  <section id='section24'>
+        <h3>No.22 Midfielder</h3>
+        <h4>George Eastham</h4>
+      <font size="1">Born: Blackpool<br>Age: 29<br>Caps: 19</font>
+    </section>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGF0YXZpeiIsImEiOiJjamgxMGRkNXYwZXhuMnFubHg1ZDg4YTY2In0.T_VVqnOpZ0Yz134UMnp6Yw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/geodataviz/cjhge6s4g32vj2rk6vfhgxrfn',
+        bearing: 0,
+        center: [-1.038997, 53.211250],
+        zoom: 6,
+        speed: 0.5,
+        pitch: 0,
+    interactive:false
+});
+var chapters = {
+    'start': {
+        bearing: -0,
+        center: [-1.038997, 53.211250],
+        zoom: 6,
+        speed: 0.5,
+        pitch: 0
+    },
+    'section1': {
+        bearing: -51.20,
+        center: [-2.198978, 53.482859],
+        speed: 0.5,
+        zoom: 16.00,
+        pitch: 60
+    },
+    'section2': {
+        center: [-2.290568, 53.463001],
+        bearing: -112,
+        zoom: 16,
+        speed: 0.5,
+        pitch: 59.5
+    },
+    'section3': {
+        bearing: -49.60,
+        center: [-0.278854, 51.555950],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section4': {
+        bearing: 17.60,
+        center: [-2.960659, 53.430710],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 58.50
+    },
+    'section5': {
+        bearing: -100.25,
+        center: [-0.190189, 51.481207],
+        zoom: 16,
+        pitch: 60,
+        speed: 0.5
+    },
+    'section6': {
+        bearing: -149.85,
+        center: [-0.107343, 51.554991],
+        zoom: 16,
+        pitch: 60,
+        speed: 0.5
+    },
+    'section7': {
+        bearing: -24.18,
+        center: [-2.229055, 53.788782],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 49
+    },
+    'section8': {
+        bearing: -162.22,
+        center: [-2.966389, 53.438889],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section9': {
+        bearing: -7.39,
+        center: [-1.142222, 52.620278],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 52
+    },
+    'section10': {
+        bearing: 106.21,
+        center: [-1.621195, 54.975358],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section11': {
+        bearing: 99.44,
+        center: [-0.085538, 51.398262],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 58
+    },
+    'section12': {
+        bearing: -75.80,
+        center: [-1.837652, 50.735023],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section13': {
+        bearing: 24.00,
+        center: [-0.016389, 51.538611],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section14': {
+        bearing: 0,
+        center: [-0.401592, 51.649888],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 52.50
+    },
+    'section15': {
+        bearing: -21.20,
+        center: [-0.083278, 50.861822],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 58.50
+    },
+    'section16': {
+        bearing: 35.60,
+        center: [-1.767457, 53.654120],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section17': {
+        bearing: 30.8,
+        center: [-1.391111, 50.905833],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section18': {
+        bearing: 34.77,
+        center: [-3.935100, 51.642200],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section19': {
+        bearing: -54.40,
+        center: [-2.175223, 52.988137],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 59.50
+    },
+    'section20': {
+        bearing: -26.02,
+        center: [-1.963649, 52.508900],
+        zoom: 16,
+        speed: 0.5,
+        pitch: 60
+    },
+};
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+var activeChapterName = 'start';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+    map.flyTo(chapters[chapterName]);
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+    activeChapterName = chapterName;
+}
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+</script>
+</body>
+</html>
+view rawresumap.html hosted with ❤ by GitHub
 
