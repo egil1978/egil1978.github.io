@@ -79,28 +79,63 @@ section:last-child {
         <a href="https://en.wikipedia.org/wiki/George_Eastham">No.22 Midfielder - George Eastham</a><br>
     </section>
     <section id='section2'>
-        <h3>Group Stage</h3>
-        <h4>England 0 - 0 Uruguay</h4>
+        <h3>Group 1</h3>
+        <h4>Monday 11th July<br>England 0 - 0 Uruguay</h4>
     </section>
-    <section id='section3'>
-        <h4>England 2 - 0 Mexico</h4>
-      <font size="1">B. Charlton 37'<br>Hunt 75'</font>
+        <section id='section3'>
+        <h3>Group 1</h3>
+        <h4>Wednesday 13th July<br>France 1 - 1 Mexico</h4>
     </section>
     <section id='section4'>
-        <h4>England 2 - 0 France</h4>
-      <font size="1">Hunt 38' 75'</font>
+        <h3>Group 1</h3>
+        <h4>Friday 15 July<br>Uruguay 2 - 1 France</h4>
     </section>
     <section id='section5'>
-       <h3>Quarter-finals</h3>
-        <h4>England 1 - 0 Argentina</h4>
-      <font size="1">Hurst 78'</font>
+        <h3>Group 1</h3>
+        <h4>Saturday 16th July<br>England 2 - 0 Mexico</h4>
+        <font size="1">B.Charlton 37'<br>Hunt 75'</font>
+    </section>
+         <section id='section5'>
+        <h3>Group 1</h3>
+        <h4>Tuesday 19th July<br>Uruguay 0 - 0 Mexico</h4>
     </section>
     <section id='section6'>
+        <h3>Group 1</h3>
+        <h4>Wednesday 20th July<br>England 2 - 0 France</h4>
+        <font size="1">Hunt 38' 75'</font>
+    </section>
+         <section id='section7'>
+        <h3>Quarter-finals</h3>
+        <h4>Saturday 23rd July<br>England 1 - 0 Argentina</h4>
+      <font size="1">Hurst 78'</font>
+    </section>
+         <section id='section8'>
+        <h3>Quarter-finals</h3>
+        <h4>Saturday 23rd July<br>West Germany 4 - 0 Uruguay</h4>
+    </section>
+         <section id='section9'>
+        <h3>Quarter-finals</h3>
+        <h4>Saturday 23rd July<br>Soviet Union 2 - 1 Hungary</h4>
+    </section>
+         <section id='section10'>
+        <h3>Quarter-finals</h3>
+        <h4>Saturday 23rd July<br>Portugal 5 - 3 North Korea</h4>
+    </section>
+    <section id='section11'>
         <h3>Semi-finals</h3>
-        <h4>England 2 - 1 Portugal</h4>
+        <h4>Monday 25th July<br>West Germany 2 - 1 Soviet Union</h4>
+    </section>
+         <section id='section12'>
+        <h3>Semi-finals</h3>
+        <h4>Tuesday 26th July<br>England 2 - 1 Portugal</h4>
       <font size="1">B.Charlton 30' 80'</font>
     </section>
-    <section id='section7'>
+        <section id='section13'>
+        <h3>Third place</h3>
+        <h4>Thursday 28th July<br>Portugal 2 - 1 Soviet Union</h4>
+      <font size="1">Hurst 18' 101' 120'<br>Peters 78'</font>
+    </section>
+    <section id='section14'>
         <h3>Final</h3>
         <h4>England 4 - 2 West Germany</h4>
       <font size="1">Hurst 18' 101' 120'<br>Peters 78'</font>
@@ -112,26 +147,26 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/geodataviz/cjh1w236f0tj22sl87sm547vt',
         bearing: 0,
-        center: [-1.038997, 53.211250],
-        zoom: 6,
+        center: [-1.863563, 52.982285],
+        zoom: 6.66,
         speed: 0.5,
         pitch: 0,
     interactive:false
 });
 var chapters = {
     'start': {
-        bearing: -0,
-        center: [-1.038997, 53.211250],
-        zoom: 6,
+        bearing: 0,
+        center: [-1.863563, 52.982285],
+        zoom: 6.66,
         speed: 0.5,
-        pitch: 0
+        pitch: 0,
     },
     'section1': {
-        bearing: -0,
-        center: [-1.038997, 53.211250],
-        zoom: 6,
+        bearing: -49.60,
+        center: [-0.278854, 51.555950],
+        zoom: 16,
         speed: 0.5,
-        pitch: 0
+        pitch: 60
     },
     'section2': {
         center: [0.132511, 51.531320],
@@ -141,34 +176,83 @@ var chapters = {
         pitch: 60
     },
     'section3': {
-        bearing: 43.12,
-        center: [-1.490596, 53.371939],
-        zoom: 13,
+        center: [0.132511, 51.531320],
+        bearing: 41.52,
+        zoom: 15,
         speed: 0.5,
         pitch: 60
     },
     'section4': {
         bearing: 0,
-        center: [-0.202823, 51.492178],
+        center: [-0.234273, 51.514681],
         zoom: 13,
         speed: 0.5,
-        pitch: 47.50
+        pitch: 36
     },
     'section5': {
-        bearing: 0,
-        center: [-1.215323, 53.202279],
+        center: [0.132511, 51.531320],
+        bearing: 41.52,
         zoom: 15,
-        pitch: 58,
-        speed: 0.5
+        speed: 0.5,
+        pitch: 60
     },
     'section6': {
-        bearing: 0,
-        center: [-2.221604, 53.495045],
+        center: [0.132511, 51.531320],
+        bearing: 41.52,
         zoom: 15,
-        pitch: 58,
-        speed: 0.5
+        speed: 0.5,
+        pitch: 60
     },
     'section7': {
+        center: [0.132511, 51.531320],
+        bearing: 41.52,
+        zoom: 15,
+        speed: 0.5,
+        pitch: 60
+    },
+    'section8': {
+        bearing: -88.8,
+        center: [-1.557256, 55.181939],
+        zoom: 14,
+        speed: 0.5,
+        pitch: 30
+    },
+    'section9': {
+        bearing: -88.8,
+        center: [-1.557256, 55.181939],
+        zoom: 14,
+        speed: 0.5,
+        pitch: 30
+    },
+    'section10': {
+        bearing: -88.8,
+        center: [-1.557256, 55.181939],
+        zoom: 14,
+        speed: 0.5,
+        pitch: 30
+    },
+    'section11': {
+        bearing: -88.8,
+        center: [-1.557256, 55.181939],
+        zoom: 14,
+        speed: 0.5,
+        pitch: 30
+    },
+    'section12': {
+        bearing: -88.8,
+        center: [-1.557256, 55.181939],
+        zoom: 14,
+        speed: 0.5,
+        pitch: 30
+    },
+    'section13': {
+        bearing: -88.8,
+        center: [-1.557256, 55.181939],
+        zoom: 14,
+        speed: 0.5,
+        pitch: 30
+    },
+    'section14': {
         bearing: -88.8,
         center: [-1.557256, 55.181939],
         zoom: 14,
