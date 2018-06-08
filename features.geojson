@@ -1,0 +1,75 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "White City Stadium"
+      },
+      "geometry": {
+        "coordinates": [
+          -0.227103,
+          51.5139
+        ],
+        "type": "Point"
+      },
+      "id": "083c9e98426e907320941bc16f32d34f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Wembley Stadium"
+      },
+      "geometry": {
+        "coordinates": [
+          -0.279586,
+          51.555994
+        ],
+        "type": "Point"
+      },
+      "id": "1caff75ff5b3cfc4244a7cb7160e2a45"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Roker Park Stadium"
+      },
+      "geometry": {
+        "coordinates": [
+          -1.37574,
+          54.921419
+        ],
+        "type": "Point"
+      },
+      "id": "510e0d08d67afd7aa0c4d98b7ae2a2f4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hillsborough Stadium"
+      },
+      "geometry": {
+        "coordinates": [
+          -1.500642,
+          53.411391
+        ],
+        "type": "Point"
+      },
+      "id": "b357578e0552034cfd695e1d1b97c57a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Goodison Park"
+      },
+      "geometry": {
+        "coordinates": [
+          -2.966252,
+          53.438846
+        ],
+        "type": "Point"
+      },
+      "id": "d3b67f8f0500ef058133a4bac58e9392"
+    }
+  ],
+  "type": "FeatureCollection"
+}
