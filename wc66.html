@@ -157,6 +157,11 @@ var map = new mapboxgl.Map({
         pitch: 0,
     interactive:false
 });
+      var popup = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([-0.279433, 51.555952])
+    .setHTML('<h1>Hello World!</h1>')
+    .addTo(map);
+    
 var chapters = {
     'start': {
         bearing: 0,
