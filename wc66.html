@@ -145,9 +145,30 @@ section:last-child {
         <iframe width="500" height="350" src="https://www.youtube.com/embed/C0aK2IgORGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </section>
 </div>
-<script>
+    
+    <style>
+
+#marker {
+    background-image: url('/mapbox-gl-js/assets/washington-monument.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+</style>
+
+    <div id='map'></div>
+
+    <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGF0YXZpeiIsImEiOiJjamgxMGRkNXYwZXhuMnFubHg1ZDg4YTY2In0.T_VVqnOpZ0Yz134UMnp6Yw';
-var map = new mapboxgl.Map({
+var monument = [-0.279433, 51.555952];
+        var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/geodataviz/cji4i2hg40fin2sloeqbq9dvr',
         bearing: 0,
@@ -157,10 +178,23 @@ var map = new mapboxgl.Map({
         pitch: 0,
     interactive:false
 });
-      var popup = new mapboxgl.Popup({closeOnClick: false})
-    .setLngLat([-0.279433, 51.555952])
-    .setHTML('<iframe width="500" height="350" src="https://www.youtube.com/embed/C0aK2IgORGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>')
+     // create the popup
+var popup = new mapboxgl.Popup({ offset: 25 })
+    .setText('Construction on the Washington Monument began in 1848.');
+
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+
+// create the marker
+new mapboxgl.Marker(el)
+    .setLngLat(monument)
+    .setPopup(popup) // sets a popup on this marker
     .addTo(map);
+
+</script>
+
+    <script>
     
 var chapters = {
     'start': {
