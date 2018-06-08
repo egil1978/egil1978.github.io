@@ -19,11 +19,45 @@
         bottom: 0;
         width: 100%;
       }
+        .marker {
+  background-image: url('egil1978.github.io/Ordnance Survey Logo RGB_144.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
     </style>
 </head>
 <body>
 
 <div id='map'></div>
+    
+    var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [0.013410, 51.526921]
+    },
+    properties: {
+      title: 'Gordon Banks',
+      description: 'London'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-2.229365, 53.499116]
+    },
+    properties: {
+      title: 'Bobby Moore',
+      description: 'Manchester'
+    }
+  }]
+};
 
 <script>
 
@@ -37,6 +71,19 @@ var map = new mapboxgl.Map({
 });
 
 // code from the next step will go here!
+    // add markers to map
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .addTo(map);
+});
+    
 
 </script>
 
