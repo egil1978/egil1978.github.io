@@ -39,6 +39,17 @@ section:last-child {
     border-bottom: none;
     margin-bottom: 1000px;
 }
+    #marker {
+    background-image: url('/mapbox-gl-js/assets/washington-monument.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mapboxgl-popup {
+    max-width: 200px;
+}
 </style>
 
 <div id='map'></div>
@@ -159,6 +170,19 @@ var monument = [-0.279433, 51.555952];
         pitch: 0,
     interactive:false
 });
+        // create the popup
+var popup = new mapboxgl.Popup({ offset: 25 })
+    .setText('Construction on the Washington Monument began in 1848.');
+
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+
+// create the marker
+new mapboxgl.Marker(el)
+    .setLngLat(monument)
+    .setPopup(popup) // sets a popup on this marker
+    .addTo(map);
     
 var chapters = {
     'start': {
