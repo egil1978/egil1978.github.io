@@ -50,7 +50,7 @@ section:last-child {
     </section>
   
     <section id='section1'>
-        <font color="#00B000"><h4>Windsor Great Park, Berkshire (28.53km2</h4></font>
+        <font color="#00B000"><h4>Windsor Great Park, Berkshire (28.53km2)</h4></font>
         <h6>Explorer:?<br>
         Landranger:?<br>
         OS Grid Ref:<br>
@@ -153,7 +153,7 @@ section:last-child {
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGF0YXZpeiIsImEiOiJjamgyM2kycXkwOTYwMnptanJueDhlMTdwIn0.cf14J_rCTb_DuqYarLXtlA';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/geodataviz/cjh81d1ri6khi2snxlaivyhhg',
+    style: 'mapbox://styles/geodataviz/cjizu6mot0xt02tlludulmpi7',
         bearing: 0,
         center: [-1.038997, 53.211250],
         zoom: 6,
@@ -162,6 +162,12 @@ var map = new mapboxgl.Map({
     interactive:false
     
 });
+    
+    var popup = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([-0.613820, 51.462991])
+    .setHTML('<h1>Hello Charles Glynneth</h1>')
+    .addTo(map);
+
 var chapters = {
     'welcome': {
         bearing: -0,
