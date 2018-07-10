@@ -21,11 +21,11 @@
 </style>
 <div id='map'></div>
 <script>
-mapboxgl.accessToken = '<your access token here>';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGF0YXZpeiIsImEiOiJjamgxMGRkNXYwZXhuMnFubHg1ZDg4YTY2In0.T_VVqnOpZ0Yz134UMnp6Yw';
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/geodataviz/cjizu6mot0xt02tlludulmpi7',
     center: [-77.04, 38.907],
     zoom: 11.15
 });
