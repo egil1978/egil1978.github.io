@@ -184,17 +184,6 @@ var map = new mapboxgl.Map({
     interactive:false
     });
     
-    map.on('load', function () {
-    map.addSource('dem', {
-        "type": "raster-dem",
-        "url": "mapbox://mapbox.terrain-rgb"
-    });
-    map.addLayer({
-        "id": "hillshading",
-        "source": "dem",
-        "type": "hillshade"
-});
-    
   var chapters = {
     'welcome': {
         bearing: -0,
