@@ -184,6 +184,20 @@ var map = new mapboxgl.Map({
     interactive:false
     });
     
+    map.on('load', function () {
+    map.addSource('dem', {
+        "type": "raster-dem",
+        "url": "mapbox://mapbox.terrain-rgb"
+    });
+    map.addLayer({
+        "id": "hillshading",
+        "source": "dem",
+        "type": "hillshade"
+    // insert below waterway-river-canal-shadow;
+    // where hillshading sits in the Mapbox Outdoors style
+    }, 'waterway-river-canal-shadow');
+});
+    
   var chapters = {
     'welcome': {
         bearing: -0,
