@@ -93,11 +93,12 @@ mapboxgl.accessToken = '';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'https://raw.githubusercontent.com/charleyglynn/charleyglynn.github.io/master/brewdoge.json',
+        maxZoom: 16,
         bearing: 0,
         center: [-3.276136, 54.831588],
         zoom: 6,
         speed: 0.5,
-        pitch: 0,
+        pitch: 0
     });
     
   var chapters = {
@@ -140,7 +141,7 @@ var map = new mapboxgl.Map({
         bearing: 0,
         center: [-0.103039, 51.522837],
         zoom: 14,
-        pitch: 0,
+        pitch: 60,
         speed: 0.5
     },
 };
