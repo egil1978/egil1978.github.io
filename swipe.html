@@ -64,11 +64,10 @@ container: 'before',
     };
 
     // Initialize the map object.
-    var map = new mapboxgl.Map({
+    var beforeMap = new mapboxgl.Map({
         container: ‘before,
         minZoom: 7,
         maxZoom: 20,
-        style: style,
         center: [ -2.968, 54.425 ],
         zoom: 13
     });
@@ -92,11 +91,10 @@ container: ‘after,
     };
 
     // Initialize the map object.
-    var map = new mapboxgl.Map({
+    var afterMap = new mapboxgl.Map({
         container: ‘after,
         minZoom: 7,
         maxZoom: 20,
-        style: style,
         center: [ -2.968, 54.425 ],
         zoom: 13
     });
