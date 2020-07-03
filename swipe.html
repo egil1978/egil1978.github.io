@@ -45,8 +45,7 @@ width: 100%;
     var serviceUrl = 'https://api.os.uk/maps/raster/v1/zxy';
 
     // Create a map style object using the ZXY service.
-    var beforeMap = new mapboxgl.Map({
-container: 'before',
+    var light = {
         'version': 8,
         'sources': {
             'raster-tiles': {
@@ -68,12 +67,12 @@ container: 'before',
         container: ‘before,
         minZoom: 7,
         maxZoom: 20,
+style: light,
         center: [ -2.968, 54.425 ],
         zoom: 13
     });
 
-var afterMap = new mapboxgl.Map({
-container: ‘after,
+var road = {
         'version': 8,
         'sources': {
             'raster-tiles': {
@@ -95,6 +94,7 @@ container: ‘after,
         container: ‘after,
         minZoom: 7,
         maxZoom: 20,
+style: road,
         center: [ -2.968, 54.425 ],
         zoom: 13
     });
