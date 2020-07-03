@@ -1,82 +1,66 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fnil\fcharset0 SourceSansPro-Regular;}
-{\colortbl;\red255\green255\blue255;\red50\green94\blue238;\red42\green44\blue51;\red249\green249\blue249;
-\red219\green63\blue57;\red133\green85\blue4;\red66\green147\blue62;\red147\green0\blue147;\red0\green0\blue0;
-\red242\green242\blue242;\red143\green144\blue150;\red14\green112\blue173;}
-{\*\expandedcolortbl;;\cssrgb\c25098\c47059\c94902;\cssrgb\c21961\c22745\c25882;\cssrgb\c98039\c98039\c98039;
-\cssrgb\c89412\c33725\c28627;\cssrgb\c59608\c40784\c392;\cssrgb\c31373\c63137\c30980;\cssrgb\c65098\c14902\c64314;\cssrgb\c0\c0\c0;
-\cssrgb\c96078\c96078\c96078;\cssrgb\c62745\c63137\c65490;\cssrgb\c392\c51765\c73333;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww15880\viewh25200\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OS Maps API | Basic Map ZXY (EPSG:3857) | Mapbox GL JS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.css" />
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        :focus { outline: none; }
+    </style>
+</head>
+<body>
 
-\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\cf3 \cb4 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf3 \cb1 <\cf5 \strokec5 html\cf3 \strokec3 >\cb4 \
-\cb1 <\cf5 \strokec5 head\cf3 \strokec3 >\cb4 \
-    \cb1 <\cf5 \strokec5 title\cf3 \strokec3 >\cb4 OS Maps API | Basic Map ZXY (EPSG:3857) | Mapbox GL JS\cb1 </\cf5 \strokec5 title\cf3 \strokec3 >\cb4 \
-    \cb1 <\cf5 \strokec5 meta\cf3 \strokec3  \cf6 \strokec6 charset\cf3 \strokec3 =\cf7 \strokec7 "utf-8"\cf3 \strokec3  />\cb4 \
-    \cb1 <\cf5 \strokec5 meta\cf3 \strokec3  \cf6 \strokec6 name\cf3 \strokec3 =\cf7 \strokec7 "viewport"\cf3 \strokec3  \cf6 \strokec6 content\cf3 \strokec3 =\cf7 \strokec7 "initial-scale=1,maximum-scale=1,user-scalable=no"\cf3 \strokec3  />\cb4 \
-    \cb1 <\cf5 \strokec5 link\cf3 \strokec3  \cf6 \strokec6 rel\cf3 \strokec3 =\cf7 \strokec7 "stylesheet"\cf3 \strokec3  \cf6 \strokec6 href\cf3 \strokec3 =\cf7 \strokec7 "https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.css"\cf3 \strokec3  />\cb4 \
-    \cb1 <\cf5 \strokec5 link\cf3 \strokec3  \cf6 \strokec6 rel\cf3 \strokec3 =\cf7 \strokec7 "stylesheet"\cf3 \strokec3  \cf6 \strokec6 href\cf3 \strokec3 =\cf7 \strokec7 "https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"\cf3 \strokec3  />\cb4 \
-    \cb1 <\cf5 \strokec5 style\cf3 \strokec3 >\
-        \cf5 \strokec5 body\cf3 \strokec3  \{ \cf7 \strokec7 margin\cf3 \strokec3 :\cf6 \strokec6 0\cf3 \strokec3 ; \cf7 \strokec7 padding\cf3 \strokec3 :\cf6 \strokec6 0\cf3 \strokec3 ; \}\
-        \cf2 \strokec2 #map\cf3 \strokec3  \{ \cf7 \strokec7 position\cf3 \strokec3 :absolute; \cf7 \strokec7 top\cf3 \strokec3 :\cf6 \strokec6 0\cf3 \strokec3 ; \cf7 \strokec7 bottom\cf3 \strokec3 :\cf6 \strokec6 0\cf3 \strokec3 ; \cf7 \strokec7 width\cf3 \strokec3 :\cf6 \strokec6 100%\cf3 \strokec3 ; \}\
-        \cf6 \strokec6 :focus\cf3 \strokec3  \{ \cf7 \strokec7 outline\cf3 \strokec3 : none; \}\
-    </\cf5 \strokec5 style\cf3 \strokec3 >\cb4 \
-\cb1 </\cf5 \strokec5 head\cf3 \strokec3 >\cb4 \
-\cb1 <\cf5 \strokec5 body\cf3 \strokec3 >\cb4 \
-\
-\cb1 <\cf5 \strokec5 div\cf3 \strokec3  \cf6 \strokec6 id\cf3 \strokec3 =\cf7 \strokec7 "map"\cf3 \strokec3 ></\cf5 \strokec5 div\cf3 \strokec3 >\cb4 \
-\
-\cb1 <\cf5 \strokec5 script\cf3 \strokec3  \cf6 \strokec6 src\cf3 \strokec3 =\cf7 \strokec7 "https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.js"\cf3 \strokec3 ></\cf5 \strokec5 script\cf3 \strokec3 >\cb4 \
-\cb1 <\cf5 \strokec5 script\cf3 \strokec3  \cf6 \strokec6 src\cf3 \strokec3 =\cf7 \strokec7 "https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"\cf3 \strokec3 ></\cf5 \strokec5 script\cf3 \strokec3 >\cb4 \
-\cb1 <\cf5 \strokec5 script\cf3 \strokec3 >\
-\
-    \cf8 \strokec8 var\cf3 \strokec3  apiKey = \cf7 \strokec7 '
-\f1\fs32 \cf9 \cb10 \strokec9 wmu54H0a67oF9oGSFCO7gogaCYqs7yq8
-\f0\fs28 \cf7 \cb1 \strokec7 '\cf3 \strokec3 ;\
-\
-    \cf8 \strokec8 var\cf3 \strokec3  serviceUrl = \cf7 \strokec7 'https://api.os.uk/maps/raster/v1/zxy'\cf3 \strokec3 ;\
-\
-    \cf11 \strokec11 // Create a map style object using the ZXY service.\cf3 \strokec3 \
-    \cf8 \strokec8 var\cf3 \strokec3  style = \{\
-        \cf7 \strokec7 'version'\cf3 \strokec3 : \cf6 \strokec6 8\cf3 \strokec3 ,\
-        \cf7 \strokec7 'sources'\cf3 \strokec3 : \{\
-            \cf7 \strokec7 'raster-tiles'\cf3 \strokec3 : \{\
-                \cf7 \strokec7 'type'\cf3 \strokec3 : \cf7 \strokec7 'raster'\cf3 \strokec3 ,\
-                \cf7 \strokec7 'tiles'\cf3 \strokec3 : [ serviceUrl + \cf7 \strokec7 '/Light_3857/\{z\}/\{x\}/\{y\}.png?key='\cf3 \strokec3  + apiKey ],\
-                \cf7 \strokec7 'tileSize'\cf3 \strokec3 : \cf6 \strokec6 256\cf3 \strokec3 ,\
-                \cf7 \strokec7 'maxzoom'\cf3 \strokec3 : \cf6 \strokec6 20\cf3 \strokec3 \
-            \}\
-        \},\
-        \cf7 \strokec7 'layers'\cf3 \strokec3 : [\{\
-            \cf7 \strokec7 'id'\cf3 \strokec3 : \cf7 \strokec7 'os-maps-zxy'\cf3 \strokec3 ,\
-            \cf7 \strokec7 'type'\cf3 \strokec3 : \cf7 \strokec7 'raster'\cf3 \strokec3 ,\
-            \cf7 \strokec7 'source'\cf3 \strokec3 : \cf7 \strokec7 'raster-tiles'\cf3 \strokec3 \
-        \}]\
-    \};\
-\
-    \cf11 \strokec11 // Initialize the map object.\cf3 \strokec3 \
-    \cf8 \strokec8 var\cf3 \strokec3  map = \cf8 \strokec8 new\cf3 \strokec3  mapboxgl.Map(\{\
-        \cf6 \strokec6 container\cf3 \strokec3 : \cf7 \strokec7 'map'\cf3 \strokec3 ,\
-        \cf6 \strokec6 minZoom\cf3 \strokec3 : \cf6 \strokec6 7\cf3 \strokec3 ,\
-        \cf6 \strokec6 maxZoom\cf3 \strokec3 : \cf6 \strokec6 20\cf3 \strokec3 ,\
-        \cf6 \strokec6 style\cf3 \strokec3 : style,\
-        \cf6 \strokec6 center\cf3 \strokec3 : [ \cf6 \strokec6 -2.968\cf3 \strokec3 , \cf6 \strokec6 54.425\cf3 \strokec3  ],\
-        \cf6 \strokec6 zoom\cf3 \strokec3 : \cf6 \strokec6 13\cf3 \strokec3 \
-    \});\
-\
-    map.dragRotate.disable(); \cf11 \strokec11 // Disable map rotation using right click + drag.\cf3 \strokec3 \
-    map.touchZoomRotate.disableRotation(); \cf11 \strokec11 // Disable map rotation using touch rotation gesture.\cf3 \strokec3 \
-\
-    \cf11 \strokec11 // Add navigation control (excluding compass button) to the map.\cf3 \strokec3 \
-    map.addControl(\cf8 \strokec8 new\cf3 \strokec3  mapboxgl.NavigationControl(\{\
-        \cf6 \strokec6 showCompass\cf3 \strokec3 : \cf12 \strokec12 false\cf3 \strokec3 \
-    \}));\
-\
-</\cf5 \strokec5 script\cf3 \strokec3 >\cb4 \
-\
-\cb1 </\cf5 \strokec5 body\cf3 \strokec3 >\cb4 \
-\cb1 </\cf5 \strokec5 html\cf3 \strokec3 >}
+<div id="map"></div>
+
+<script src="https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.js"></script>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<script>
+
+    var apiKey = 'wmu54H0a67oF9oGSFCO7gogaCYqs7yq8';
+
+    var serviceUrl = 'https://api.os.uk/maps/raster/v1/zxy';
+
+    // Create a map style object using the ZXY service.
+    var style = {
+        'version': 8,
+        'sources': {
+            'raster-tiles': {
+                'type': 'raster',
+                'tiles': [ serviceUrl + '/Light_3857/{z}/{x}/{y}.png?key=' + apiKey ],
+                'tileSize': 256,
+                'maxzoom': 20
+            }
+        },
+        'layers': [{
+            'id': 'os-maps-zxy',
+            'type': 'raster',
+            'source': 'raster-tiles'
+        }]
+    };
+
+    // Initialize the map object.
+    var map = new mapboxgl.Map({
+        container: 'map',
+        minZoom: 7,
+        maxZoom: 20,
+        style: style,
+        center: [ -2.968, 54.425 ],
+        zoom: 13
+    });
+
+    map.dragRotate.disable(); // Disable map rotation using right click + drag.
+    map.touchZoomRotate.disableRotation(); // Disable map rotation using touch rotation gesture.
+
+    // Add navigation control (excluding compass button) to the map.
+    map.addControl(new mapboxgl.NavigationControl({
+        showCompass: false
+    }));
+
+</script>
+
+</body>
+</html>
