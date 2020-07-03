@@ -4,9 +4,8 @@
 <meta charset="utf-8" />
 <title>Swipe between maps</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<script src="https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-
 <style>
 	body { margin: 0; padding: 0; }
 	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -33,8 +32,7 @@ bottom: 0;
 width: 100%;
 }
 </style>
-
-<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
 <link
 rel="stylesheet"
 href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css"
@@ -45,45 +43,19 @@ type="text/css"
 <div id="after" class="map"></div>
 </div>
 <script>
-	var apiKey = 'wmu54H0a67oF9oGSFCO7gogaCYqs7yq8';
-
-    var serviceUrl = 'https://api.os.uk/maps/raster/v1/zxy';
-
-// Create a map style object using the ZXY service.
-    var style = {
-        'version': 8,
-        'sources': {
-            'raster-tiles': {
-                'type': 'raster',
-                'tiles': [ serviceUrl + '/Light_3857/{z}/{x}/{y}.png?key=' + apiKey ],
-                'tileSize': 256,
-                'maxzoom': 20
-            }
-        },
-        'layers': [{
-            'id': 'os-maps-zxy',
-            'type': 'raster',
-            'source': 'raster-tiles'
-        }]
-    };
-
-
+	mapboxgl.accessToken = 'pk.eyJ1Ijoib3JkbmFuY2VzdXJ2ZXkiLCJhIjoicmR0dXZkQSJ9.aERX_Ol_wRfwgC2Onl9__g';
 var beforeMap = new mapboxgl.Map({
 container: 'before',
-minZoom: 7,
-        maxZoom: 20,
-        style: style,
-        center: [ -2.968, 54.425 ],
-        zoom: 13
+style: 'mapbox://styles/mapbox/light-v10',
+center: [0, 0],
+zoom: 0
 });
  
 var afterMap = new mapboxgl.Map({
 container: 'after',
-minZoom: 7,
-        maxZoom: 20,
-        style: style,
-        center: [ -2.968, 54.425 ],
-        zoom: 13
+style: 'mapbox://styles/mapbox/dark-v10',
+center: [0, 0],
+zoom: 0
 });
  
 // A selector or reference to HTML element
